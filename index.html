@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paw Buddy — Find Your Perfect Dog</title>
+  <title>Paw Buddy — Find Your lovely paw companion</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
     rel="stylesheet">
   <style>
@@ -185,7 +185,7 @@
       animation-delay: -5s;
     }
 
-    
+
     .paw-buddy-title {
       font-family: 'Lora', serif;
       font-size: clamp(32px, 6vw, 48px);
@@ -197,19 +197,22 @@
       text-transform: uppercase;
       animation: fadeInDown .6s ease .1s both;
     }
+
     .paw-buddy-title .highlight {
       color: white;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
+
     .paw-buddy-title .highlight-orange {
       color: var(--brown);
       background: white;
       padding: 4px 16px;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
       display: inline-block;
       transform: rotate(-2deg);
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -425,7 +428,7 @@
       text-align: left;
       transition: all .2s ease;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
       line-height: 1.4;
     }
@@ -433,6 +436,29 @@
     .option-btn .opt-icon {
       font-size: 22px;
       flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .opt-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .opt-label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .opt-desc {
+      font-size: 11px;
+      color: var(--text-soft);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .option-btn.selected .opt-desc {
+      color: rgba(255, 255, 255, .8);
     }
 
     .option-btn:hover {
@@ -670,6 +696,21 @@
       font-size: 12px;
       padding: 4px 10px;
       border-radius: 50px;
+    }
+
+    .breed-match-pct {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: white;
+      color: #D4AC0D;
+      font-family: 'Lora', serif;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+      z-index: 2;
     }
 
     .breed-card-body {
@@ -1517,13 +1558,13 @@
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
     </div>
-    
+
     <div class="paw-buddy-title">
       <span class="highlight">PAW</span> <span class="highlight-orange">BUDDY</span>
     </div>
     <div class="hero-badge"> India's First Dog Lifestyle Advisor</div>
-    <h1>Find Your<br><span>Perfect Dog</span></h1>
-    <p>Answer 9 quick questions about your lifestyle and we'll match you with the top 5 dog breeds perfect for you —
+    <h1>Find Your<br><span>Lovely Paw Companion</span></h1>
+    <p>Answer 10 quick questions about your lifestyle and we'll match you with the top 5 dog breeds perfect for you —
       including India-specific advice.</p>
     <button class="hero-cta" onclick="startQuiz()">Find My Breed </button>
     <div class="hero-stats">
@@ -1532,7 +1573,7 @@
         <div class="stat-label">Breeds Analysed</div>
       </div>
       <div class="stat">
-        <div class="stat-num">9</div>
+        <div class="stat-num">10</div>
         <div class="stat-label">Quiz Questions</div>
       </div>
       <div class="stat">
@@ -1548,12 +1589,13 @@
     <div class="quiz-wrap">
       <div class="quiz-header">
         <h2>Tell us about your lifestyle </h2>
-        <p>This helps us find the most compatible dog for you</p>
+        <p>This helps us find the most compatible dog for you , by analyzing your daily routine, living situation, and
+          preferences.</p>
       </div>
       <div class="progress-wrap">
         <div class="progress-labels">
-          <span id="q-progress-label">Question 1 of 9</span>
-          <span id="q-progress-pct">11%</span>
+          <span id="q-progress-label">Question 1 of 10</span>
+          <span id="q-progress-pct">10%</span>
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="progress-fill" style="width:11%"></div>
@@ -1594,7 +1636,9 @@
             style="display:none; background-color:#3B82F6; color:white;"> Share Results</button>
           <button class="btn-share btn-whatsapp" id="btn-wa-share" onclick="shareWhatsApp()"> Share on WhatsApp</button>
           <button class="btn-share btn-png" onclick="downloadPNG()"> Download as Image</button>
-          <button class="btn-share" onclick="window.open('https://forms.gle/KkCC5eKfRb94mhcY8', '_blank')" style="background-color: var(--white); color: var(--orange); border: 2px solid var(--orange); font-weight: 700;"> Share Feedback</button>
+          <button class="btn-share" onclick="window.open('https://forms.gle/KkCC5eKfRb94mhcY8', '_blank')"
+            style="background-color: var(--white); color: var(--orange); border: 2px solid var(--orange); font-weight: 700;">
+            Share Feedback</button>
           <button class="btn-share btn-restart" onclick="restart()"> Retake Quiz</button>
         </div>
       </div>
@@ -1713,89 +1757,347 @@
     ];
 
     // ─────────────────────────────────────────────────────────────
-    // QUESTIONS (9 total)
+    // QUESTIONS (10 total)
     // ─────────────────────────────────────────────────────────────
     const questions = [
+
       {
-        id: "purpose", text: "What is the main purpose of getting a dog?", sub: "Choose what matters most to you",
+        id: "purpose",
+        text: "What kind of role would you love your dog to have in your life?",
+        sub: "Every dog has unique strengths and personality traits. Choosing the role that matters most to you helps us recommend breeds that naturally fit your lifestyle and expectations.",
         options: [
-          { icon: "‍‍", label: "Family companion", val: "family" },
-          { icon: "️", label: "Guard & security", val: "guard" },
-          { icon: "", label: "Exercise & activity partner", val: "active" },
-          { icon: "️", label: "Emotional support / therapy", val: "therapy" },
-          { icon: "", label: "Companion for elderly", val: "elderly" },
-          { icon: "", label: "I just love a specific breed", val: "breed" },
-        ], cols: 2
+          {
+            icon: "",
+            label: "Family Companion",
+            desc: "Friendly, affectionate and loving breeds that enjoy spending time with the entire family.",
+            val: "family"
+          },
+
+          {
+            icon: "",
+            label: "Home Guardian",
+            desc: "Confident and loyal breeds that naturally stay alert and protective of their loved ones.",
+            val: "guard"
+          },
+
+          {
+            icon: "",
+            label: "Exercise & Adventure Partner",
+            desc: "Energetic breeds that enjoy walks, runs, travel and outdoor activities with you.",
+            val: "active"
+          },
+
+          {
+            icon: "",
+            label: "Emotional Support & Comfort",
+            desc: "Gentle and emotionally connected breeds that bring warmth, companionship and calmness.",
+            val: "therapy"
+          },
+
+          {
+            icon: "",
+            label: "Companion for Seniors",
+            desc: "Calm, easygoing and loving breeds that are comfortable in peaceful home environments.",
+            val: "elderly"
+          },
+
+          {
+            icon: "",
+            label: "I Already Love a Specific Breed",
+            desc: "You already have a favorite breed in mind and want recommendations around similar qualities.",
+            val: "breed"
+          }
+        ],
+        cols: 2
+      },
+
+      {
+        id: "home",
+
+        text: "What type of home do you live in?",
+
+        sub: "Your living space helps us understand how comfortably different dog breeds can adapt to your daily environment, movement space and lifestyle.",
+
+        options: [
+
+          {
+            icon: "",
+            label: "1BHK Apartment (under 600 sq ft)",
+            desc: "Compact and cozy homes that are ideal for smaller companion breeds that enjoy indoor living.",
+            val: "apt-small"
+          },
+
+          {
+            icon: "",
+            label: "2BHK Apartment (600–1,000 sq ft)",
+            desc: "Balanced apartment spaces suitable for many small and medium-sized family-friendly breeds.",
+            val: "apt-mid"
+          },
+
+          {
+            icon: "",
+            label: "3BHK / 4BHK Apartment (1,000–2,000 sq ft)",
+            desc: "Spacious apartments that comfortably support active and medium-to-large companion breeds.",
+            val: "apt-large"
+          },
+
+          {
+            icon: "",
+            label: "Independent house, no yard",
+            desc: "Comfortable indoor home environments with larger movement space for a variety of breeds.",
+            val: "house-no-yard"
+          },
+
+          {
+            icon: "",
+            label: "Independent house with yard",
+            desc: "Excellent setup for energetic and playful breeds that enjoy outdoor activity and open areas.",
+            val: "house-yard"
+          }
+
+        ],
+
+        cols: 2
       },
       {
-        id: "home", text: "What type of home do you live in?", sub: "Be honest — it affects the breed's happiness",
+        id: "city",
+        text: "What is the weather usually like in your city or region?",
+        sub: "Different breeds are naturally comfortable in different climates. Matching your dog with your local weather helps them stay happy, active and healthy.",
         options: [
-          { icon: "", label: "Apartment (under 600 sqft)", val: "apt-small" },
-          { icon: "", label: "Apartment (600–1200 sqft)", val: "apt-mid" },
-          { icon: "", label: "Independent house, no yard", val: "house-no-yard" },
-          { icon: "", label: "Independent house with yard", val: "house-yard" },
-        ], cols: 2
+          {
+            icon: "",
+            label: "Warm & Humid",
+            desc: "Coastal and tropical regions with warmer temperatures for most of the year.",
+            val: "hot"
+          },
+
+          {
+            icon: "",
+            label: "Moderate & Pleasant",
+            desc: "Comfortable climates with mild temperatures throughout most seasons.",
+            val: "medium"
+          },
+
+          {
+            icon: "",
+            label: "Mixed Seasons",
+            desc: "Regions that experience sunny summers, monsoons and cooler winters.",
+            val: "mixed"
+          },
+
+          {
+            icon: "",
+            label: "Cool & Cold",
+            desc: "Hill stations and colder regions with chilly weather for a significant part of the year.",
+            val: "cold"
+          }
+        ],
+        cols: 2
       },
+
       {
-        id: "city", text: "Which city are you in?", sub: "This affects climate matching for your dog",
+        id: "experience",
+        text: "How familiar are you with caring for dogs?",
+        sub: "Understanding your comfort level with dogs helps us recommend breeds that suit your experience and daily routine.",
         options: [
-          { icon: "️", label: "Hyderabad / Chennai / Mumbai (Hot)", val: "hot" },
-          { icon: "️", label: "Bangalore / Pune / Chandigarh (Medium)", val: "medium" },
-          { icon: "️", label: "Delhi / Kolkata (Mixed seasons)", val: "mixed" },
-          { icon: "️", label: "Shimla / Manali / Dehradun / Darjeeling (Cool/Cold)", val: "cold" },
-        ], cols: 2
+          {
+            icon: "",
+            label: "First-Time Dog Parent",
+            desc: "Perfect for discovering friendly and beginner-friendly breeds with easier care routines.",
+            val: "none"
+          },
+
+          {
+            icon: "",
+            label: "Some Experience",
+            desc: "You already understand basic care, companionship and everyday dog routines.",
+            val: "some"
+          },
+
+          {
+            icon: "",
+            label: "Experienced Dog Owner",
+            desc: "Comfortable with training, handling and caring for a wide range of dog personalities.",
+            val: "experienced"
+          }
+        ],
+        cols: 3
       },
+
       {
-        id: "experience", text: "How much experience do you have with dogs?", sub: "Honest answer helps us match correctly",
+        id: "activity",
+        text: "How active is your daily lifestyle?",
+        sub: "Dogs have different energy levels. Matching your activity style with the right breed creates a happier experience for both you and your companion.",
         options: [
-          { icon: "", label: "First-time owner — never had a dog", val: "none" },
-          { icon: "", label: "Some experience — had a dog before", val: "some" },
-          { icon: "", label: "Experienced — trained dogs before", val: "experienced" },
-        ], cols: 3
+          {
+            icon: "",
+            label: "Relaxed Lifestyle",
+            desc: "Comfortable indoor routines with lighter physical activity and shorter walks.",
+            val: "low"
+          },
+
+          {
+            icon: "",
+            label: "Moderately Active",
+            desc: "Enjoys regular walks, occasional outings and balanced daily activity.",
+            val: "moderate"
+          },
+
+          {
+            icon: "",
+            label: "Highly Active",
+            desc: "Energetic lifestyle with outdoor activities, workouts, running or adventure trips.",
+            val: "high"
+          }
+        ],
+        cols: 3
       },
+
       {
-        id: "activity", text: "How active is your daily lifestyle?", sub: "Your energy level = your dog's energy level",
+        id: "budget",
+        text: "What monthly care budget feels comfortable for you?",
+        sub: "Different breeds have different grooming, nutrition and healthcare needs. We’ll suggest breeds that comfortably fit your preferred care style.",
         options: [
-          { icon: "️", label: "Low — mostly indoors, desk job", val: "low" },
-          { icon: "", label: "Moderate — daily walks, occasional runs", val: "moderate" },
-          { icon: "️", label: "High — daily runs, gym, very active", val: "high" },
-        ], cols: 3
+          {
+            icon: "",
+            label: "Under ₹5,000",
+            desc: "Suitable for many loving and low-maintenance companion breeds.",
+            val: "low"
+          },
+
+          {
+            icon: "",
+            label: "₹5,000 – ₹10,000",
+            desc: "Comfortable for most popular family and companion breeds.",
+            val: "mid"
+          },
+
+          {
+            icon: "",
+            label: "₹10,000 – ₹20,000",
+            desc: "Ideal for premium breeds with regular grooming and detailed care.",
+            val: "high"
+          },
+
+          {
+            icon: "",
+            label: "Above ₹20,000",
+            desc: "Perfect for giant or luxury breeds with premium lifestyle needs.",
+            val: "premium"
+          }
+        ],
+        cols: 2
       },
+
       {
-        id: "budget", text: "What's your monthly budget for your dog?", sub: "Includes food, grooming, vet visits, supplies",
+        id: "family",
+        text: "Who lives at home with you?",
+        sub: "Your home environment helps us recommend breeds that naturally fit your family structure and lifestyle.",
         options: [
-          { icon: "", label: "Under ₹5,000", val: "low" },
-          { icon: "", label: "₹5,000 – ₹10,000", val: "mid" },
-          { icon: "", label: "₹10,000 – ₹20,000", val: "high" },
-          { icon: "️", label: "Above ₹20,000", val: "premium" },
-        ], cols: 2
+          {
+            icon: "",
+            label: "Young Children",
+            desc: "Ideal for playful, patient and family-friendly companion breeds.",
+            val: "kids"
+          },
+
+          {
+            icon: "",
+            label: "Senior Family Members",
+            desc: "Comfortable with calm and easygoing breeds suited for peaceful homes.",
+            val: "elderly"
+          },
+
+          {
+            icon: "",
+            label: "Both Children & Seniors",
+            desc: "Best matched with gentle and adaptable breeds that suit all age groups.",
+            val: "both"
+          },
+
+          {
+            icon: "",
+            label: "Adults Only",
+            desc: "Flexible home setup that supports a wide variety of dog personalities.",
+            val: "adults"
+          }
+        ],
+        cols: 2
       },
+
       {
-        id: "family", text: "Who lives at home with you?", sub: "Important for matching safe, gentle breeds",
+        id: "shedding",
+        text: "What kind of grooming and shedding level do you prefer?",
+        sub: "Different breeds shed differently. Choosing your preference helps us match breeds that fit your comfort and maintenance style.",
         options: [
-          { icon: "", label: "Young children (under 10)", val: "kids" },
-          { icon: "", label: "Elderly family members", val: "elderly" },
-          { icon: "‍‍‍", label: "Both kids and elderly", val: "both" },
-          { icon: "", label: "Adults only", val: "adults" },
-        ], cols: 2
+          {
+            icon: "",
+            label: "Comfortable With Shedding",
+            desc: "You are comfortable with regular brushing and routine home cleaning.",
+            val: "fine"
+          },
+
+          {
+            icon: "",
+            label: "Moderate Shedding Preferred",
+            desc: "Balanced option with manageable grooming and moderate coat maintenance.",
+            val: "moderate"
+          },
+
+          {
+            icon: "",
+            label: "Low Shedding Preferred",
+            desc: "Great for cleaner indoor spaces and lower grooming maintenance.",
+            val: "low"
+          }
+        ],
+        cols: 3
       },
+
       {
-        id: "shedding", text: "How do you feel about dog shedding?", sub: "Hair on clothes, sofas, and floors",
+        id: "hair",
+        text: "Do you have a preferred coat or hair length?",
+        sub: "Coat length affects appearance, grooming effort and maintenance routines. Choose the style you personally enjoy most.",
         options: [
-          { icon: "", label: "Fine with it — I'll vacuum often", val: "fine" },
-          { icon: "", label: "Okay with moderate shedding", val: "moderate" },
-          { icon: "", label: "Prefer low/no shedding", val: "low" },
-        ], cols: 3
+          {
+            icon: "",
+            label: "Short Coat",
+            desc: "Easy to maintain with a clean and sleek appearance.",
+            val: "Short"
+          },
+
+          {
+            icon: "",
+            label: "Medium Coat",
+            desc: "Balanced appearance with manageable grooming requirements.",
+            val: "Medium"
+          },
+
+          {
+            icon: "",
+            label: "Long Coat",
+            desc: "Elegant and fluffy appearance with regular grooming routines.",
+            val: "Long"
+          },
+
+          {
+            icon: "",
+            label: "No Preference",
+            desc: "Open to all coat types and focused mainly on personality compatibility.",
+            val: "any"
+          }
+        ],
+        cols: 2
       },
+
       {
-        id: "hair", text: "Do you have a hair length preference?", sub: "This is your personal choice!",
-        options: [
-          { icon: "️", label: "Short — clean, minimal grooming", val: "Short" },
-          { icon: "", label: "Medium — balanced look", val: "Medium" },
-          { icon: "", label: "Long — fluffy, glamorous", val: "Long" },
-          { icon: "", label: "No preference", val: "any" },
-        ], cols: 2
-      },
+        id: "extra",
+        text: "What additional qualities would you love in your ideal dog companion?",
+        sub: "Share any special personality traits, lifestyle preferences or qualities that matter most to you. We’ll include them in your final recommendations.",
+        type: "text",
+        placeholder: "Example: calm personality, intelligent, apartment-friendly, highly trainable, affectionate, playful, low maintenance..."
+      }
+
     ];
 
     // ─────────────────────────────────────────────────────────────
@@ -1890,6 +2192,28 @@
       document.getElementById('progress-fill').style.width = pct + '%';
 
       const area = document.getElementById('question-area');
+
+      if (q.type === 'text') {
+        // Free-text question (Q10)
+        area.innerHTML = `
+    <div class="question-card">
+      <div class="q-num">Q${currentQ + 1} / ${questions.length}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="q-sub">${q.sub}</div>
+      <textarea id="extra-input" class="custom-breed-input" style="width:100%;min-height:100px;border-radius:16px;padding:16px;font-size:15px;font-family:Georgia,'Times New Roman',Times,serif;resize:vertical;margin-bottom:8px;" placeholder="${q.placeholder}">${answers[q.id] || ''}</textarea>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="prevQ()" ${currentQ === 0 ? 'style="visibility:hidden"' : ''}>← Back</button>
+        <button class="btn-next" id="btn-next" onclick="nextQ()">
+          See My Results
+        </button>
+      </div>
+    </div>`;
+        document.getElementById('extra-input').addEventListener('input', (e) => {
+          answers[q.id] = e.target.value;
+        });
+        return;
+      }
+
       area.innerHTML = `
     <div class="question-card">
       <div class="q-num">Q${currentQ + 1} / ${questions.length}</div>
@@ -1899,7 +2223,7 @@
       <div class="quiz-nav">
         <button class="btn-back" onclick="prevQ()" ${currentQ === 0 ? 'style="visibility:hidden"' : ''}>← Back</button>
         <button class="btn-next" id="btn-next" onclick="nextQ()" disabled>
-          ${currentQ === questions.length - 1 ? 'See My Results ' : 'Next →'}
+          ${currentQ === questions.length - 1 ? 'See My Results' : 'Next →'}
         </button>
       </div>
     </div>`;
@@ -1909,7 +2233,8 @@
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         if (answers[q.id] === opt.val) btn.classList.add('selected');
-        btn.innerHTML = `<span class="opt-icon">${opt.icon}</span><span>${opt.label}</span>`;
+        const descHtml = opt.desc ? `<span class="opt-desc">${opt.desc}</span>` : '';
+        btn.innerHTML = `<span class="opt-icon">${opt.icon}</span><span class="opt-content"><span class="opt-label">${opt.label}</span>${descHtml}</span>`;
         btn.onclick = () => selectOption(q.id, opt.val, btn);
         wrap.appendChild(btn);
       });
@@ -1923,7 +2248,8 @@
     }
 
     function nextQ() {
-      if (!answers[questions[currentQ].id]) return;
+      const q = questions[currentQ];
+      if (q.type !== 'text' && !answers[q.id]) return;
       if (currentQ < questions.length - 1) { currentQ++; renderQuestion(); }
       else { showResults(); }
     }
@@ -1954,8 +2280,11 @@
       // Home type
       const home = answers.home || 'apt-mid';
       if ((home === 'apt-small' || home === 'apt-mid') && b.apt === 'Yes') score += 20;
+      if (home === 'apt-large' && b.apt === 'Yes') score += 15;
+      if (home === 'apt-large' && b.apt === 'No' && b.size !== 'XL') score += 5;
       if ((home === 'house-yard') && b.house === 'High') score += 15;
       if ((home === 'apt-small' || home === 'apt-mid') && b.apt === 'No') score -= 15;
+      if (home === 'apt-large' && b.apt === 'No' && (b.size === 'XL')) score -= 10;
 
       // Climate
       const city = answers.city || 'medium';
@@ -2015,6 +2344,20 @@
       if (hair !== 'any' && b.hair === hair) score += 15;
       if (hair !== 'any' && b.hair !== hair) score -= 5;
 
+      // Extra feature preference (Q10 — free text keyword matching)
+      const extraText = (answers.extra || '').toLowerCase();
+      if (extraText) {
+        if ((extraText.includes('quiet') || extraText.includes('bark') || extraText.includes('silent')) && b.energy.includes('Low')) score += 10;
+        if ((extraText.includes('hypoallergenic') || extraText.includes('allerg')) && (b.shedding === 'Very Low' || b.shedding === 'Low')) score += 12;
+        if ((extraText.includes('train') || extraText.includes('intellig') || extraText.includes('smart')) && (b.purpose.includes('Working') || b.purpose.includes('Sporting') || b.purpose.includes('Service'))) score += 12;
+        if ((extraText.includes('cuddl') || extraText.includes('lap') || extraText.includes('snuggle')) && (b.purpose.includes('Companion') || b.purpose.includes('Therapy') || b.purpose.includes('Toy'))) score += 12;
+        if ((extraText.includes('other pet') || extraText.includes('cat') || extraText.includes('multi')) && b.risk === 'Low') score += 10;
+        if ((extraText.includes('low maintenance') || extraText.includes('easy')) && b.grooming === 'Low' && b.shedding !== 'High') score += 10;
+        if ((extraText.includes('guard') || extraText.includes('protect') || extraText.includes('watch')) && b.purpose.includes('Guard')) score += 10;
+        if ((extraText.includes('small') || extraText.includes('tiny') || extraText.includes('compact')) && (b.size === 'XS' || b.size === 'S' || b.size === 'XS-S')) score += 10;
+        if ((extraText.includes('big') || extraText.includes('large')) && (b.size === 'L' || b.size === 'XL')) score += 10;
+      }
+
       // India suitability bonus
       score += (b.score * 3);
 
@@ -2071,11 +2414,27 @@
         <div class="top-badge"> YOUR BEST MATCH</div>
         <h3>${b.name}</h3>
         <div class="reason">${b.reason}</div>
-        <div class="match-tags">
+        <div class="match-tags" style="margin-bottom:8px;">
           ${b.tags.map(t => `<span class="match-tag">${t}</span>`).join('')}
         </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          <span style="background:rgba(255,255,255,.2);padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600;">Size: ${b.size}</span>
+          <span style="background:rgba(255,255,255,.2);padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600;">${b.hair} Hair</span>
+          <span style="background:rgba(255,255,255,.2);padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600;">Shed: ${b.shedding.split(' ')[0]}</span>
+          <span style="background:rgba(255,255,255,.95);color:#D4AC0D;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700;">${pct}% match</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+          <div style="font-size:11px;color:rgba(255,255,255,.8);"><strong style="display:block;color:white;font-size:12px;">${b.cost}</strong>Monthly Cost</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.8);"><strong style="display:block;color:white;font-size:12px;">${b.risk}</strong>Family Risk</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.8);"><strong style="display:block;color:white;font-size:12px;">${b.time}</strong>Daily Time</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.8);"><strong style="display:block;color:white;font-size:12px;">${b.grooming}</strong>Grooming</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-details" style="flex:1;padding:10px;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;border:none;transition:all .2s;background:white;color:var(--orange);" onclick="showDetail('${b.name}')">Full Profile</button>
+          <button class="btn-compare" id="cmp-${b.name.replace(/\s/g, '_')}" style="flex:1;padding:10px;border-radius:12px;font-size:12px;font-weight:700;cursor:pointer;border:none;transition:all .2s;background:rgba(255,255,255,.2);color:white;" onclick="toggleCompare('${b.name}')">+ Compare</button>
+        </div>
       </div>
-      <div class="match-score">${pct}%<span>lifestyle match</span></div>
+      <div class="match-score" style="display:none;">${pct}%<span>lifestyle match</span></div>
     </div>`;
     }
 
@@ -2091,6 +2450,7 @@
         card.innerHTML = `
       <div class="breed-card-img">
         <span class="breed-rank">#${i + 1} Match</span>
+        <span class="breed-match-pct">${pct}% match</span>
         <img src="${b.img}" alt="${b.name}" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="breed-card-body">
@@ -2099,8 +2459,7 @@
         <div class="breed-pills">
           <span class="pill pill-orange">${b.hair} Hair</span>
           <span class="pill ${b.shedding.includes('High') ? 'pill-red' : 'pill-green'}">Shed: ${b.shedding.split(' ')[0]}</span>
-          <span class="pill pill-blue">${b.size}</span>
-          <span class="pill pill-yellow">${pct}% match</span>
+          <span class="pill pill-blue">Size: ${b.size}</span>
         </div>
         <div class="breed-mini-stats">
           <div class="mini-stat"><strong>${b.cost}</strong>Monthly Cost</div>
@@ -2190,7 +2549,6 @@
       const idx = compareList.indexOf(name);
       const btn = document.getElementById(`cmp-${name.replace(/\s/g, '_')}`);
       if (idx === -1) {
-        if (compareList.length >= 3) { alert('You can compare up to 3 breeds at a time.'); return; }
         compareList.push(name);
         if (btn) { btn.textContent = ' Selected'; btn.classList.add('active'); }
       } else {
@@ -2350,7 +2708,7 @@
         ctx.arc(540, 420, 130, 0, Math.PI * 2);
         ctx.closePath();
         ctx.clip();
-        
+
         // Compute layout to fit cover
         const aspect = img.width / img.height;
         let dw = 260, dh = 260;
@@ -2359,7 +2717,7 @@
         } else {
           dh = 260 / aspect;
         }
-        ctx.drawImage(img, 540 - dw/2, 420 - dh/2, dw, dh);
+        ctx.drawImage(img, 540 - dw / 2, 420 - dh / 2, dw, dh);
         ctx.restore();
       } catch (err) {
         console.error("Could not load image for canvas", err);
@@ -2377,7 +2735,7 @@
       ctx.fillStyle = '#3D1F00';
       ctx.font = 'bold 24px sans-serif';
       ctx.fillText('My Top 5:', 540, 770);
-      
+
       ctx.font = '22px sans-serif';
       ctx.fillStyle = '#7A4010';
       topBreeds.forEach((b, i) => {
@@ -2426,7 +2784,7 @@
         ctx.arc(540, 420, 130, 0, Math.PI * 2);
         ctx.closePath();
         ctx.clip();
-        
+
         const aspect = img.width / img.height;
         let dw = 260, dh = 260;
         if (aspect > 1) {
@@ -2434,7 +2792,7 @@
         } else {
           dh = 260 / aspect;
         }
-        ctx.drawImage(img, 540 - dw/2, 420 - dh/2, dw, dh);
+        ctx.drawImage(img, 540 - dw / 2, 420 - dh / 2, dw, dh);
         ctx.restore();
       } catch (err) {
         console.error("Could not load image for canvas", err);
@@ -2452,7 +2810,7 @@
       ctx.fillStyle = '#3D1F00';
       ctx.font = 'bold 24px sans-serif';
       ctx.fillText('My Top 5:', 540, 770);
-      
+
       ctx.font = '22px sans-serif';
       ctx.fillStyle = '#7A4010';
       topBreeds.forEach((b, i) => {
@@ -2479,13 +2837,13 @@
 
           if (navigator.canShare && navigator.canShare({ files: [file] })) {
             await navigator.share({
-              title: 'My Perfect Dog Match',
+              title: 'Find your lovely paw companion',
               text: txt,
               files: [file]
             });
           } else {
             await navigator.share({
-              title: 'My Perfect Dog Match',
+              title: 'Find your lovely paw companion',
               text: txt,
               url: window.location.origin
             });
