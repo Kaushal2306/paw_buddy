@@ -1035,6 +1035,31 @@
       font-size: 14px;
       margin-bottom: 24px;
     }
+    .contact-panel{
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff7f2, #fff0e8);
+  border: 1px solid rgba(255,107,43,0.18);
+  text-align: center;
+}
+
+.contact-panel h4{
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+
+.contact-item{
+  margin: 10px 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.contact-item strong{
+  color: var(--orange);
+}
 
     .share-btns {
       display: flex;
@@ -1652,8 +1677,19 @@
           <button class="btn-share" onclick="window.open('https://forms.gle/KkCC5eKfRb94mhcY8', '_blank')"
             style="background-color: var(--white); color: var(--orange); border: 2px solid var(--orange); font-weight: 700;">
             Share Feedback</button>
-          <button class="btn-share btn-restart" onclick="restart()"> Retake Quiz</button>
+          <button class="btn-share btn-restart" onclick="restart()" style="color: var(--white); border: 3px solid var(--red); font-weight: 700;background-color: var(--red);"> Retake Quiz</button>
         </div>
+        <div class="contact-panel">
+  <h4>Contact Me</h4>
+
+  <div class="contact-item">
+    <strong>Phone:</strong> +91 7358444850
+  </div>
+
+  <div class="contact-item">
+    <strong>Email:</strong> vibhuvankonda@gmail.com
+  </div>
+</div>
       </div>
     </div>
   </section>
@@ -1728,7 +1764,7 @@
     <div class="footer-logo"> Paw Buddy</div>
     <p>India's first dog breed lifestyle advisor</p>
     <div class="footer-links">
-      <span> 7358444850</span>
+      <span> <b>7358444850</b></span>
       <span> vibhuvankonda@gmail.com</span>
       <a href="#" onclick="showAdminLogin(); return false;" style="margin-left:10px;">Admin</a>
     </div>
